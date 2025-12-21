@@ -33,6 +33,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         };
     }
 
+    // Map specific articles to OG-optimized images
+    const ogImageMap: Record<string, string> = {
+        "the-ultimate-live-edge-wood-guide": "/og/og_ultimate_guide.png",
+        "parota-wood-pros-cons-use-cases": "/og/og_parota_guide.png",
+        "live-edge-table-pricing-guide-2025": "/og/og_pricing_guide.png",
+        "top-5-live-edge-table-makers-dallas": "/og/og_dfw_makers.png",
+    };
+
+    const ogImage = ogImageMap[slug] || post.frontmatter.image || "/og/og_home_default.png";
+
     return {
         title: `${post.frontmatter.title} | Live Edge Guide`,
         description: post.frontmatter.description,
@@ -42,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             type: "article",
             publishedTime: post.frontmatter.date,
             authors: [post.frontmatter.author || "Editorial Team"],
-            images: post.frontmatter.image ? [post.frontmatter.image] : [],
+            images: [ogImage],
         },
     };
 }

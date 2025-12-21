@@ -35,30 +35,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(post.frontmatter.date),
             changeFrequency: "monthly" as const,
             priority: 0.7,
+            images: post.frontmatter.image ? [`${baseUrl}${post.frontmatter.image}`] : undefined,
         })),
         ...process.map((post) => ({
             url: `${baseUrl}/process/${post.slug}/`,
             lastModified: new Date(post.frontmatter.date),
             changeFrequency: "monthly" as const,
             priority: 0.7,
+            images: post.frontmatter.image ? [`${baseUrl}${post.frontmatter.image}`] : undefined,
         })),
         ...care.map((post) => ({
             url: `${baseUrl}/care/${post.slug}/`,
             lastModified: new Date(post.frontmatter.date),
             changeFrequency: "monthly" as const,
             priority: 0.7,
+            images: post.frontmatter.image ? [`${baseUrl}${post.frontmatter.image}`] : undefined,
         })),
         ...inspiration.map((post) => ({
             url: `${baseUrl}/inspiration/${post.slug}/`,
             lastModified: new Date(post.frontmatter.date),
             changeFrequency: "monthly" as const,
             priority: 0.6,
+            images: post.frontmatter.image ? [`${baseUrl}${post.frontmatter.image}`] : undefined,
         })),
         ...resources.map((post) => ({
             url: `${baseUrl}/resources/${post.slug}/`,
             lastModified: new Date(post.frontmatter.date),
             changeFrequency: "monthly" as const,
             priority: 0.6,
+            images: post.frontmatter.image ? [`${baseUrl}${post.frontmatter.image}`] : undefined,
         })),
     ];
 
