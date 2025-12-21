@@ -16,7 +16,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://liveedgeguide.com"),
+  metadataBase: new URL("https://liveedgeguide.com/"),
   title: "Live Edge Guide - The Authority on Custom Tables",
   description: "Your complete guide to live edge furniture, Parota wood, and sustainable slab sourcing in Texas.",
   robots: {

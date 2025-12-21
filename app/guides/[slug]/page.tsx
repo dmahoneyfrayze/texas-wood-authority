@@ -35,13 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     // Map specific articles to OG-optimized images
     const ogImageMap: Record<string, string> = {
-        "the-ultimate-live-edge-wood-guide": "/og/og_ultimate_guide.png",
-        "parota-wood-pros-cons-use-cases": "/og/og_parota_guide.png",
-        "live-edge-table-pricing-guide-2025": "/og/og_pricing_guide.png",
-        "top-5-live-edge-table-makers-dallas": "/og/og_dfw_makers.png",
+        "the-ultimate-live-edge-wood-guide": "https://liveedgeguide.com/og/og_ultimate_guide.png",
+        "parota-wood-pros-cons-use-cases": "https://liveedgeguide.com/og/og_parota_guide.png",
+        "live-edge-table-pricing-guide-2025": "https://liveedgeguide.com/og/og_pricing_guide.png",
+        "top-5-live-edge-table-makers-dallas": "https://liveedgeguide.com/og/og_dfw_makers.png",
     };
 
-    const ogImage = ogImageMap[slug] || post.frontmatter.image || "/og/og_home_default.png";
+    const ogImage = ogImageMap[slug] || (post.frontmatter.image ? `https://liveedgeguide.com${post.frontmatter.image}` : "https://liveedgeguide.com/og/og_home_default.png");
 
     return {
         title: `${post.frontmatter.title} | Live Edge Guide`,
