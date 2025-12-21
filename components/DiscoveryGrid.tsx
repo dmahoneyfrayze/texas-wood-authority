@@ -223,38 +223,48 @@ export default function DiscoveryGrid({ title, description, posts, category }: O
                     <motion.div key={post.slug} variants={itemVariants} layout>
                         <Link
                             href={`/${category}/${post.slug}`}
-                            className="group block relative h-full rounded-2xl border border-stone-200 bg-white shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 dark:border-stone-800 dark:bg-stone-900 overflow-hidden"
+                            className="group block relative h-full rounded-2xl border border-stone-200 bg-white shadow-lg transition-all hover:shadow-2xl hover:-translate-y-2 dark:border-stone-800 dark:bg-stone-900 overflow-hidden"
                         >
-                            {/* Background Image */}
+                            {/* Large Background Image */}
                             {post.frontmatter.image && (
-                                <div className="absolute inset-0">
+                                <div className="relative h-48 w-full overflow-hidden">
                                     <Image
                                         src={post.frontmatter.image}
                                         alt={post.frontmatter.title}
                                         fill
-                                        className="object-cover opacity-10 group-hover:opacity-15 group-hover:scale-105 transition-all duration-500"
+                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
                                     />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                                    
+                                    {/* Tag overlay on image */}
+                                    <div className="absolute top-4 left-4">
+                                        <span className={`inline-block rounded-full px-3 py-1 text-xs font-bold tracking-wider uppercase backdrop-blur-md ${tagClasses} shadow-lg`}>
+                                            {post.frontmatter.tags?.[0] || category.charAt(0).toUpperCase() + category.slice(1)}
+                                        </span>
+                                    </div>
                                 </div>
                             )}
 
                             <div className={`absolute inset-0 bg-gradient-to-br ${hoverGradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
 
-                            <div className="relative z-10">
-                                <div className="mb-6 flex items-center justify-between">
-                                    <span className={`inline-block rounded-full px-3 py-1 text-xs font-bold tracking-wider uppercase ${tagClasses}`}>
-                                        {post.frontmatter.tags?.[0] || category.charAt(0).toUpperCase() + category.slice(1)}
-                                    </span>
+                            <div className="relative z-10 p-6">
+                                <div className="mb-4 flex items-center justify-between">
+                                    {!post.frontmatter.image && (
+                                        <span className={`inline-block rounded-full px-3 py-1 text-xs font-bold tracking-wider uppercase ${tagClasses}`}>
+                                            {post.frontmatter.tags?.[0] || category.charAt(0).toUpperCase() + category.slice(1)}
+                                        </span>
+                                    )}
                                     {post.frontmatter.date && (
                                         <span className="text-xs text-stone-400">{post.frontmatter.date}</span>
                                     )}
                                 </div>
-                                <h2 className={`mb-4 text-2xl font-bold font-[family-name:var(--font-outfit)] text-stone-900 dark:text-stone-50 transition-colors ${titleHoverClasses}`}>
+                                <h2 className={`mb-3 text-xl font-bold font-[family-name:var(--font-outfit)] text-stone-900 dark:text-stone-50 transition-colors ${titleHoverClasses} line-clamp-2`}>
                                     {post.frontmatter.title}
                                 </h2>
-                                <p className="text-stone-600 dark:text-stone-400 line-clamp-3 leading-relaxed">
+                                <p className="text-stone-600 dark:text-stone-400 line-clamp-2 leading-relaxed text-sm mb-4">
                                     {post.frontmatter.description}
                                 </p>
-                                <div className={`mt-8 flex items-center text-sm font-bold ${linkClasses}`}>
+                                <div className={`flex items-center text-sm font-bold ${linkClasses}`}>
                                     <span>{linkText}</span>
                                     <motion.span
                                         className="ml-2"
