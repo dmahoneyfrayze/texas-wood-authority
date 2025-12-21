@@ -2,6 +2,7 @@ import { getPostBySlug, getAllPosts } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import { generateArticleSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/lib/seo";
@@ -111,6 +112,19 @@ export default async function CarePage({ params }: Props) {
                         />
                         <JsonLd schema={jsonLd} />
                         <JsonLd schema={breadcrumbSchema} />
+
+                        {/* Hero Image */}
+                        {post.frontmatter.image && (
+                            <div className="relative w-full h-[400px] mb-8 rounded-xl overflow-hidden">
+                                <Image
+                                    src={post.frontmatter.image}
+                                    alt={post.frontmatter.title}
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
+                            </div>
+                        )}
 
                         <div className="mb-8 border-b border-stone-200 pb-8 dark:border-stone-800">
                             <Link href="/care" className="text-sm font-medium text-stone-500 hover:text-stone-900 mb-6 inline-block transition-colors">
