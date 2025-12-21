@@ -27,6 +27,7 @@ export function Footer() {
                             Technical Roadmap
                         </h3>
                         <ul className="space-y-4 text-xs font-bold text-stone-500 dark:text-stone-400 uppercase tracking-widest">
+                            <li><Link href="/guides" className="hover:text-amber-700 transition-colors">Browse All Guides</Link></li>
                             <li><Link href="/guides/the-ultimate-live-edge-wood-guide" className="hover:text-amber-700 transition-colors">The Ultimate Guide</Link></li>
                             <li><Link href="/process/how-live-edge-tables-are-made" className="hover:text-amber-700 transition-colors">Fabrication Process</Link></li>
                             <li><Link href="/guides/parota-wood-pros-cons-use-cases" className="hover:text-amber-700 transition-colors">Parota Deep-Dive</Link></li>
