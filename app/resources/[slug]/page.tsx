@@ -79,6 +79,7 @@ export default async function ResourcePage({ params }: Props) {
     const mdxComponents = {
         ConversionBridge,
         LeadMagnet,
+        Image,
         h2: (props: any) => (
             <h2 id={slugify(props.children?.toString() || "")} {...props} />
         ),
