@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useMemo } from "react";
 import { cn } from "@/lib/utils";
@@ -12,6 +13,7 @@ interface Post {
         description: string;
         tags?: string[];
         date?: string;
+        image?: string;
     };
 }
 
@@ -221,8 +223,20 @@ export default function DiscoveryGrid({ title, description, posts, category }: O
                     <motion.div key={post.slug} variants={itemVariants} layout>
                         <Link
                             href={`/${category}/${post.slug}`}
-                            className="group block relative h-full rounded-2xl border border-stone-200 bg-white p-8 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 dark:border-stone-800 dark:bg-stone-900 overflow-hidden"
+                            className="group block relative h-full rounded-2xl border border-stone-200 bg-white shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 dark:border-stone-800 dark:bg-stone-900 overflow-hidden"
                         >
+                            {/* Background Image */}
+                            {post.frontmatter.image && (
+                                <div className="absolute inset-0">
+                                    <Image
+                                        src={post.frontmatter.image}
+                                        alt={post.frontmatter.title}
+                                        fill
+                                        className="object-cover opacity-10 group-hover:opacity-15 group-hover:scale-105 transition-all duration-500"
+                                    />
+                                </div>
+                            )}
+
                             <div className={`absolute inset-0 bg-gradient-to-br ${hoverGradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
 
                             <div className="relative z-10">
