@@ -49,6 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         openGraph: {
             title: post.frontmatter.title,
             description: post.frontmatter.description,
+            url: `https://liveedgeguide.com/guides/${slug}/`,
             type: "article",
             publishedTime: post.frontmatter.date,
             authors: [post.frontmatter.author || "Editorial Team"],
