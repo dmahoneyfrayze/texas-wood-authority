@@ -34,7 +34,7 @@ export function HomeContent() {
                     initial={{ scale: 1.1, opacity: 0 }}
                     animate={{ scale: 1, opacity: 0.3 }}
                     transition={{ duration: 2, ease: "easeOut" }}
-                    className="absolute inset-0 bg-[url('/images/hero-texture.jpg')] bg-cover bg-center"
+                    className="absolute inset-0 bg-[url('/images/hero-banner---welcome.webp')] bg-cover bg-center"
                 />
 
                 <div className="relative z-20 max-w-5xl mx-auto text-center">
@@ -244,7 +244,7 @@ export function HomeContent() {
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <Link href="/guides/top-5-live-edge-table-makers-dallas" className="relative group overflow-hidden rounded-[2rem] h-[28rem] shadow-xl">
-                            <div className="absolute inset-0 bg-stone-900 scale-110 group-hover:scale-100 transition-transform duration-700" />
+                            <div className="absolute inset-0 bg-[url('/images/blog---workshop-scene.webp')] bg-cover bg-center scale-110 group-hover:scale-100 transition-transform duration-700" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-10 flex flex-col justify-end">
                                 <h3 className="text-white text-2xl font-bold font-[family-name:var(--font-outfit)] mb-3">Top 5 DFW Makers Audit</h3>
                                 <p className="text-stone-400 text-sm leading-relaxed mb-6">Our independent technical review of local custom workshops.</p>
@@ -252,7 +252,7 @@ export function HomeContent() {
                             </div>
                         </Link>
                         <Link href="/guides/where-to-buy-live-edge-slabs-dallas-fort-worth" className="relative group overflow-hidden rounded-[2rem] h-[28rem] shadow-xl">
-                            <div className="absolute inset-0 bg-stone-800 scale-110 group-hover:scale-100 transition-transform duration-700" />
+                            <div className="absolute inset-0 bg-[url('/images/blog---raw-lumber-yard.webp')] bg-cover bg-center scale-110 group-hover:scale-100 transition-transform duration-700" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-10 flex flex-col justify-end">
                                 <h3 className="text-white text-2xl font-bold font-[family-name:var(--font-outfit)] mb-3">Shop the Slabs</h3>
                                 <p className="text-stone-400 text-sm leading-relaxed mb-6">The authority guide to sourcing raw materials in North Texas.</p>
@@ -260,7 +260,7 @@ export function HomeContent() {
                             </div>
                         </Link>
                         <Link href="/guides/texas-pecan-deep-dive" className="relative group overflow-hidden rounded-[2rem] h-[28rem] shadow-xl">
-                            <div className="absolute inset-0 bg-amber-900/40 scale-110 group-hover:scale-100 transition-transform duration-700" />
+                            <div className="absolute inset-0 bg-[url('/images/blog-header---wood-grain-texture.webp')] bg-cover bg-center scale-110 group-hover:scale-100 transition-transform duration-700" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-10 flex flex-col justify-end">
                                 <h3 className="text-white text-2xl font-bold font-[family-name:var(--font-outfit)] mb-3">Texas Pecan Analysis</h3>
                                 <p className="text-stone-400 text-sm leading-relaxed mb-6">Why our native state tree remains our #1 recommendation.</p>
@@ -329,7 +329,7 @@ export function HomeContent() {
                             className="lg:w-1/2 relative"
                         >
                             <div className="aspect-[4/5] md:aspect-square bg-stone-200 dark:bg-stone-800 rounded-[40px] overflow-hidden shadow-2xl relative group">
-                                <div className="absolute inset-0 bg-[url('/images/craft-detail.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110" />
+                                <div className="absolute inset-0 bg-[url('/images/craftsmanship-process.webp')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent z-10" />
                                 <div className="absolute bottom-0 left-0 p-12 z-20">
                                     <div className="inline-flex items-center text-amber-500 font-bold tracking-[0.4em] text-xs uppercase mb-4">
